@@ -10,12 +10,6 @@ body {
     font-family: 'Poppins';
 }
 
-/* .display-4{
-
-    margin-top: 30px;
-
-} */
-
 /* from Bulma */
 .icon {
     align-items: center;
@@ -64,6 +58,16 @@ body {
 
 .bg-black {
     background: #000 !important;
+}
+
+.overlay {
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	position: fixed;
+	background: white;
+	z-index: -1;
 }
 
 /* -------------------------------- Media Queries */

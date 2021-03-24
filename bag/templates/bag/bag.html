@@ -77,6 +77,8 @@
                                                     </div>
                                                 </div>
                                         </form>
+                                        <a class="update-link text-info"><small>Update</small></a>
+                                        <a class="remove-item text-danger" style="float:right" id="remove_{{item.item_id}}" data-size="{{item.size}}"><small>Remove</small></a>
                                     </td>
                                     <td class="py-3">
                                         <p class="my-0">{{ item.product.price }}</p>
@@ -84,7 +86,7 @@
                                 </tr>
                             {% endfor %}
                             <tr>
-                                <td colspan="5" class="pt-5 text-right">
+                                <td colspan="5" class="pt-5" style="text-align: right">
                                     <h6><strong>Bag Total: ${{ total|floatformat:2 }}</strong></h6>
                                     <h6>Delivery: ${{ delivery|floatformat:2 }}</h6>
                                     <h4 class="mt-4"><strong>Grand Total: ${{ grand_total|floatformat:2 }}</strong></h4>
@@ -96,7 +98,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td colspan="5" class="text-right">
+                                <td colspan="5" style="text-align: right">
                                     <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 btn-lg">
                                         <span class="icon">
                                             <i class="fas fa-chevron-left"></i>
@@ -125,4 +127,9 @@
             </div>
         </div>
     </div>
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+{% include 'products/includes/quantity_input_script.html' %}
 {% endblock %}

@@ -132,4 +132,29 @@
 {% block postloadjs %}
 {{ block.super }}
 {% include 'products/includes/quantity_input_script.html' %}
+
+<script type ="text/javascript">
+    // update quality on click
+    $('.update-link').click(function(e) {
+        var form = $(this).prev('.update');
+        form.submit();
+
+    });
+    // Remove item and reload on click
+    $('.remove-item').click(function(e) {
+        var csrf_token = "{{ csrf_token }}"
+        var itemId = $(this).attr('id').split('remove_')[1];
+        var size = $(this).data('size');
+        var url ='/bag/remove/${itemId}';
+        var data = {'csrfmiddlewaretoken': csrfToken, 'size': size}
+
+        $.post(url, data)
+          .done(function(){
+
+            loaction.reload();
+          })
+
+    });
+</script>
 {% endblock %}
+

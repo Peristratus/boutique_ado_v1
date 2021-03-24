@@ -49,7 +49,7 @@
                                         <p class="my-0">${{ item.product.price }}</p>
                                     </td>
                                     <td class="py-3 w-25">
-                                        <form  class= "form update-form" method="post" action= "">
+                                        <form  class= "form update-form" method="post" action= "{% url 'adjust_bag' item.item_id %}">
                                             {% csrf_token %}
                                                 <div class="form-group ">
                                                     <div class="input-group">
@@ -133,28 +133,26 @@
 {{ block.super }}
 {% include 'products/includes/quantity_input_script.html' %}
 
-<script type ="text/javascript">
-    // update quality on click
+<script type="text/javascript">
+    // Update quantity on click
     $('.update-link').click(function(e) {
-        var form = $(this).prev('.update');
+        var form = $(this).prev('.update-form');
         form.submit();
+    })
 
-    });
     // Remove item and reload on click
     $('.remove-item').click(function(e) {
-        var csrf_token = "{{ csrf_token }}"
+        var csrfToken = "{{ csrf_token }}";
         var itemId = $(this).attr('id').split('remove_')[1];
         var size = $(this).data('size');
-        var url ='/bag/remove/${itemId}';
-        var data = {'csrfmiddlewaretoken': csrfToken, 'size': size}
+        var url = `/bag/remove/${itemId}`;
+        var data = {'csrfmiddlewaretoken': csrfToken, 'size': size};
 
         $.post(url, data)
-          .done(function(){
-
-            loaction.reload();
-          })
-
-    });
+         .done(function() {
+             location.reload();
+         });
+    })
 </script>
 {% endblock %}
 

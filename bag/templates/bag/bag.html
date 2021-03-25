@@ -135,7 +135,7 @@
 {% include 'products/includes/quantity_input_script.html' %}
 
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+
 <script type="text/javascript">
     // Update quantity on click
     $('.update-link').click(function(e) {
@@ -150,6 +150,7 @@
         var size = $(this).data('product_size');
         var url = `/bag/remove/${itemId}/`;
         var data = {'csrfmiddlewaretoken': csrfToken, 'product_size': size};
+    
 
         $.post(url, data)
          .done(function() {

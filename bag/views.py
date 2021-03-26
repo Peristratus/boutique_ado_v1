@@ -63,7 +63,7 @@ def adjust_bag(request, item_id):
             
         else:
             del bag[item_id]['items_by_size'][size]
-            if not bag[item_id]['item_by_size']:
+            if not bag[item_id]['items_by_size']:
                 bag.pop(item_id)
             messages.success(request, f'Remove size {size.upper()} {product.name} from your bag')           
     else:
@@ -88,7 +88,7 @@ def remove_from_bag(request, item_id):
 
         if size:
                 del bag[item_id]['items_by_size'][size]
-                if not bag[item_id]['item_by_size']:
+                if not bag[item_id]['items_by_size']:
                     bag.pop(item_id)
                 messages.success(request, f'Remove size {size.upper()} {product.name} from your bag')
         else:

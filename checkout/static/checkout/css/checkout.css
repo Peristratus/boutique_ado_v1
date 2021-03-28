@@ -35,3 +35,11 @@
     color: #000;
     border: 1px solid #000;
 }
+
+ input, optgroup, select, textarea {
+    margin: 10;
+    margin-bottom: 5px;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}

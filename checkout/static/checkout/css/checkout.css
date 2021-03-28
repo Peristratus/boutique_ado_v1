@@ -36,7 +36,7 @@
     border: 1px solid #000;
 }
 
- input, optgroup, select, textarea {
+ input {
     margin: 10;
     margin-bottom: 5px;
     font-family: inherit;

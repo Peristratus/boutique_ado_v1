@@ -27,14 +27,16 @@ def checkout(request):
 
     )
 
-    print(intent)
+    order_form = OrderForm()  
 
-    order_form = OrderForm()
+    if not stripe_public_key:
+        messages.warning(request, 'stripe public key is missing. \ Did you forget to set it in your environment?')
+
     template = 'checkout/checkout.html'
     context = {
         'order_form': order_form,
-        'stripe_public_key': 'pk_test_51Ia4WcB87QiGthiQ6RsSj9JW0J7I6Yd8I7DrvlUXLDZiq9axTSW7IAjMtJUw1bodA3Njbc9Zpd89RXGhQc0OgQye00wLe6Ll0E',
-        'client_secret': 'test client secret',
+        'stripe_public_key': stripe_public_key,
+        'client_secret': intent.client_secret,
     }
 
     return render(request, template, context)

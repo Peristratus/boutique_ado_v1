@@ -150,33 +150,31 @@
         <script>
             var alanBtnInstance = alanBtn({
                 key: "b5f2ac5c6c58d286b6d865ab2984c50e2e956eca572e1d8b807a3e2338fdd0dc/stage",
-                onCommand: function (commandData) {
-                    if (commandData.command === "go:back") {
-                        //call client code that will react on the received command
-                    }
-                },
-                onCommand: function(commandData){
-                    if(commandData.command === 'open-arrivals')
-                    openArrivals()
-                },
-                 onCommand: function(commandData){
-                    if(commandData.command === 'open-Deals')
-                    openDeals()
-                },
-                rootEl: document.getElementById("alan-btn"),
+            onCommand: function(commandData){
+                if(commandData.command === "open-products"){
+                   openProducts()
+                }
+                if(commandData.command === "open-Allspecials"){
+                   openSpecials()
+                }
+            },   
+            rootEl: document.getElementById("alan-btn"),
             });
             
-            function openArrivals() {
+            function openProducts() {
 
-                window.open("{%  url 'products' %}?category=new_arrivals");
+                window.open("{% url 'products' %}");
             }
 
-            function openDeals() {
+            function openSpecials() {
 
-                window.open("{%  url 'products' %}?category=deals");
+                window.open("{%  url 'products' %}?category=new_arrivals,deals,clearance");
             }
-            
 
+            function clearance() {
+
+                window.open("{%  url 'products' %}?category=clearance");
+            }
         </script>
     {% endblock %}
 

@@ -155,9 +155,17 @@
                         //call client code that will react on the received command
                     }
                 },
+                onCommand: function(commandData){
+                    if(commandData.command === 'open-Arrivals')
+                    openArrivals()
+                },
                 rootEl: document.getElementById("alan-btn"),
             });
             
+            function openArrivals() {
+
+                window.open("{% url 'home' %}");
+            }
 
         </script>
     {% endblock %}

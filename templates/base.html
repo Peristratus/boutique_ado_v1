@@ -156,16 +156,26 @@
                     }
                 },
                 onCommand: function(commandData){
-                    if(commandData.command === 'open-Arrivals')
+                    if(commandData.command === 'open-arrivals')
                     openArrivals()
+                },
+                 onCommand: function(commandData){
+                    if(commandData.command === 'open-Deals')
+                    openDeals()
                 },
                 rootEl: document.getElementById("alan-btn"),
             });
             
             function openArrivals() {
 
-                window.open("{% url 'home' %}");
+                window.open("{%  url 'products' %}?category=new_arrivals");
             }
+
+            function openDeals() {
+
+                window.open("{%  url 'products' %}?category=deals");
+            }
+            
 
         </script>
     {% endblock %}

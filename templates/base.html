@@ -156,8 +156,9 @@
                 }
                 if(commandData.command === "open-Allspecials"){
                    openSpecials()
-                } else if(commandData.command === "open-newArrivals"){
-                   arrivals_new();
+                } 
+                if (commandData.command === "open-newarrivals"){
+                   arrivalsnew()
                 }
             },   
             rootEl: document.getElementById("alan-btn"),
@@ -173,9 +174,9 @@
                 window.open("{%  url 'products' %}?category=new_arrivals,deals,clearance");
             }
 
-            function arrivals_new() {
+            function arrivalsnew() {
 
-                window.open("{%  url 'products' %}?category=clearance");
+                window.open("{%  url 'products' %}?category=new_arrivals");
             }
             
         </script>

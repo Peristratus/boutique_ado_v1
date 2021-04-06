@@ -156,9 +156,8 @@
                 }
                 if(commandData.command === "open-Allspecials"){
                    openSpecials()
-                }
-                if(commandData.command === "open-newArrivals"){
-                   arrivals_new()
+                } else if(commandData.command === "open-newArrivals"){
+                   arrivals_new();
                 }
             },   
             rootEl: document.getElementById("alan-btn"),

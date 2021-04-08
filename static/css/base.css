@@ -179,7 +179,7 @@ input[name='q']::placeholder{
 
 input {
     margin: 10;
-    margin-bottom: 0px;
+    margin-bottom: 10px;
     font-family: inherit;
     font-size: inherit;
     line-height: inherit;

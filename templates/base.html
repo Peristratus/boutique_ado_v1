@@ -163,6 +163,15 @@
                 if (commandData.command === "open-kitchen"){
                     window.open("{%  url 'products' %}?category=bed_bath,kitchen_dining");
                 }
+                if (commandData.command === "view-bag"){
+                    window.open("{% url 'view_bag' %}");
+                }
+                if (commandData.command === "register"){
+                    window.open("{% url 'account_signup' %}");
+                }
+                if (commandData.command === "login"){
+                    window.open("{% url 'account_login' %}");
+                }
             },   
             rootEl: document.getElementById("alan-btn"),
             });

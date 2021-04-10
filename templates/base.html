@@ -154,14 +154,31 @@
                 if(commandData.command === "open-products"){
                    openProducts()
                 }
+                if(commandData.command === "close-products"){
+                        window.close("{% url 'products' %}");
+                }
+
                 if (commandData.command === "open-clothing"){
                     window.open("{%  url 'products' %}?category=activewear,essentials,jeans,shirts");
                 }
+                 if(commandData.command === "close-clothing"){
+                        window.close("{%  url 'products' %}?category=activewear,essentials,jeans,shirts");
+                }
+                
                 if(commandData.command === "open-Allspecials"){
                    openSpecials()
                 } 
+
+                if(commandData.command === "close-allspecials"){
+                        window.close("{%  url 'products' %}?category=new_arrivals,deals,clearance");
+                }
+
                 if (commandData.command === "open-kitchen"){
                     window.open("{%  url 'products' %}?category=bed_bath,kitchen_dining");
+                }
+
+                 if(commandData.command === "close-kitchen"){
+                        window.close("{%  url 'products' %}?category=bed_bath,kitchen_dining");
                 }
 
                 if (commandData.command === "product-price"){
@@ -170,6 +187,24 @@
 
                 if (commandData.command === "close-productbyprc"){
                     window.close("{% url 'products' %}?sort=price&direction=asc");
+                }
+
+                if (commandData.command === "open-rating"){
+                    window.open("{% url 'products' %}?sort=rating&direction=desc");  
+
+                }
+
+                if(commandData.command === "close-rating"){
+                        window.close("{% url 'products' %}?sort=rating&direction=desc");
+                }
+
+                if (commandData.command === "open-category"){
+                    window.open("{% url 'products' %}?sort=category&direction=asc");  
+
+                }
+
+                if(commandData.command === "close-category"){
+                        window.close("{% url 'products' %}?sort=category&direction=asc");
                 }
                 
                 if (commandData.command === "view-bag"){
@@ -187,17 +222,18 @@
                 if (commandData.command === "login"){
                     window.open("{% url 'account_login' %}");
                 }
+
             },   
             rootEl: document.getElementById("alan-btn"),
             });
 
             function openclothing() {
 
-                window.open("{%  url 'products' %}?category=activewear,essentials,jeans,shirts");
+                window.open("{%  url 'products' %}?category=activewear,essentials,jeans,shirts",);
             }
             function openProducts() {
 
-                window.open("{% url 'products' %}");
+                window.open("{% url 'products' %}", "_blank");
             }
 
             function openSpecials() {

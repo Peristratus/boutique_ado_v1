@@ -142,13 +142,9 @@
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
         <script src="assets/vendor/bootstrap-notify/bootstrap-notify.min.js"></script>
-        
-        <script type="text/javascript">
-            $('.toast').toast('show');
-        </script>
 
         <script type="text/javascript"
-        src="https://studio.alan.app/web/lib/alan_lib.min.js"></script>
+        src="https://studio.alan.app/web/lib/alan_lib.min.js"></script>  
         <script>
             var alanBtnInstance = alanBtn({
                 key: "b5f2ac5c6c58d286b6d865ab2984c50e2e956eca572e1d8b807a3e2338fdd0dc/stage",
@@ -172,17 +168,7 @@
                 }                 
                 
                 if(commandData.command === "open-notify"){
-                    window.open( '<div class="toast" role="alert" aria-live="assertive" aria-atomic="true">' +
-                        '<button type="button" aria-hidden="true" class="close" data-notify="dismiss">×</button>' +
-                        '<span data-notify="icon"></span> ' +
-                        '<span data-notify="title">{1}</span> ' +
-                        '<span data-notify="message">{2}</span>' +
-                        '<div class="progress" data-notify="progressbar">' +
-                        '<div class="progress-bar progress-bar-{0}" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;"></div>' +
-                        '</div>' +
-                        '<a href="{3}" target="{4}" data-notify="url"></a>' +
-                        '</div>' )
-    
+                    window.open()
                 } 
 
                 if(commandData.command === "close-allspecials"){
@@ -242,7 +228,7 @@
             },   
             rootEl: document.getElementById("alan-btn"),
             });
-
+               
             function openclothing() {
 
                 window.open("{%  url 'products' %}?category=activewear,essentials,jeans,shirts",);

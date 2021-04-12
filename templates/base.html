@@ -228,7 +228,12 @@
                 if (commandData.command === "login"){
                     window.open("{% url 'account_login' %}");
                 }
-
+                if (commandData.command === "login"){
+                    window.open("{% url 'account_login' %}");
+                }
+                 if (commandData.command === "notify"){
+                    viewItems()
+                }
             },   
             rootEl: document.getElementById("alan-btn"),
             });

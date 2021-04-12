@@ -36,6 +36,28 @@
   </head>
 
   <body>
+      <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+                </div>
+            </div>
+            </div>
+        <!---End Modal-->
+
     <header class="container-fluid fixed-top">
         <div id="topnav" class="row bg-white pt-lg-2 d-none d-lg-flex">
             <div class="col-12 col-lg-4 my-auto py-1 py-1g-0 text-center text-lg-left">
@@ -228,11 +250,8 @@
                 if (commandData.command === "login"){
                     window.open("{% url 'account_login' %}");
                 }
-                if (commandData.command === "login"){
-                    window.open("{% url 'account_login' %}");
-                }
-                 if (commandData.command === "notify"){
-                    viewItems()
+                if (commandData.command ==="open-notify"){
+                   
                 }
             },   
             rootEl: document.getElementById("alan-btn"),
@@ -251,9 +270,9 @@
 
                 window.open("{%  url 'products' %}?category=new_arrivals,deals,clearance");
             }
-            
         </script>
-
+        
+        
         
     {% endblock %}
 

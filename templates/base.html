@@ -27,6 +27,12 @@
         <script src="https://kit.fontawesome.com/e9c73d7092.js" crossorigin="anonymous"></script>
         <!---Stripe-->
          <script src="https://js.stripe.com/v3/"></script>
+         <script type="text/javascript">
+             $('.toast').toast('show');
+        </script>
+         <script>
+                $('.salestoast').toast('hide');
+         </script>
     {% endblock %}
 
     {% block extra_js %}
@@ -148,13 +154,11 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
         <script src="assets/vendor/bootstrap-notify/bootstrap-notify.min.js"></script>
 
-        <script type="text/javascript">
-             $('.toast').toast('show');
-        </script>
 
         <script type="text/javascript"
         src="https://studio.alan.app/web/lib/alan_lib.min.js"></script>  
         <script>
+          
             var alanBtnInstance = alanBtn({
                 key: "b5f2ac5c6c58d286b6d865ab2984c50e2e956eca572e1d8b807a3e2338fdd0dc/stage",
             onCommand: function(commandData){
@@ -230,7 +234,8 @@
                     window.open("{% url 'account_login' %}");
                 }
                 if (commandData.command ==="open-notify"){
-                     $('.toast').toast('show');
+
+                     $('.salestoast').toast('show');
                 }
             },   
             rootEl: document.getElementById("alan-btn"),

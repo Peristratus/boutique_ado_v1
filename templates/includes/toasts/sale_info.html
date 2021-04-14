@@ -1,3 +1,4 @@
+{% load static %}
 <div class="salestoast toast custom-toast rounded-0 border-top-0" data-autohide="false">
     <div class="arrow-up arrow-info"></div>
     <div class="w-100 toast-capper bg-info"></div>
@@ -11,9 +12,9 @@
         {{ message }}        
     </div>
      <div class="toast-body">
-    <img src="media/0900631B8140782DM.jpg" class="img-thumbnail" alt="waffel maker">
+    <img src="{% static 'sales/0900631B8140782DM.jpg' %}" class="img-thumbnail" alt="waffel maker">
      <small>Cuisinart Round Waffle Maker| $30.00</small>
-     <img src="media/DP0224201517023517M.jpg" class="img-thumbnail" alt="cappuccino maker">
+     <img src="{% static 'sales/DP0224201517023517M.jpg' %}" class="img-thumbnail" alt="cappuccino maker">
      <small>K-Café cappuccino Maker| $78.00</small>
   </div>
 </div>

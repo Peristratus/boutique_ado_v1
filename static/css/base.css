@@ -280,7 +280,17 @@ input {
     border-radius: 0;
 }
 
-
+.salestoast {
+    width: 350px;
+    max-width: 100%;
+    font-size: .875rem;
+    pointer-events: auto;
+    background-color: rgba(255,255,255,.85);
+    background-clip: padding-box;
+    border: 1px solid rgba(0,0,0,.1);
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+    border-radius: .25rem;
+}
 
 /* fixed top navbar only on medium and up */
 @media (min-width: 992px) {

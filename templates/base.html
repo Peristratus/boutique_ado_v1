@@ -27,10 +27,7 @@
         <script src="https://kit.fontawesome.com/e9c73d7092.js" crossorigin="anonymous"></script>
         <!---Stripe-->
          <script src="https://js.stripe.com/v3/"></script>
-        <!---Toast-->
-         <script>
-                $('.salestoast').toast('hide');
-         </script>
+
     {% endblock %}
 
     {% block extra_js %}
@@ -42,7 +39,7 @@
   <body>
       <!-- toast -->
         <div class="message-container">
-             {% include 'includes/toasts/sale_info.html' %}
+    
         </div>
       <!---End toast-->
 
@@ -236,8 +233,7 @@
                     window.open("{% url 'account_login' %}");
                 }
                 if (commandData.command ==="open-notify"){
-
-                     $('.salestoast').toast('show');
+                        
                 }
             },   
             rootEl: document.getElementById("alan-btn"),

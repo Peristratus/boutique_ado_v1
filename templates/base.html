@@ -35,7 +35,14 @@
 
     <title>Boutique Ado {% block extra_title %}{% endblock %}</title>
   </head>
+
   <body>
+      <!----Alert message ----->
+        <div id="panel" class="d-none"> 
+         {% include 'includes/toasts/toast_alert.html' %}
+
+        </div>
+      <!---End Alert Message------>
     <header class="container-fluid fixed-top">
         <div id="topnav" class="row bg-white pt-lg-2 d-none d-lg-flex">
             <div class="col-12 col-lg-4 my-auto py-1 py-1g-0 text-center text-lg-left">
@@ -142,6 +149,17 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
         <script src="assets/vendor/bootstrap-notify/bootstrap-notify.min.js"></script>
 
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+        <script>
+            $(document).ready(function(){
+            $(".close").click(function(){
+                $("#panel").toggleClass("d-none")
+              });
+            });
+        </script>
+
          <script type="text/javascript">
              $('.toast').toast('show');
         </script>
@@ -224,9 +242,11 @@
                 if (commandData.command === "login"){
                     window.open("{% url 'account_login' %}");
                 }
+                if (commandData.command === "bed-bath"){
+                    window.open("{% url 'products' %}?category=bed_bath");
+                }
                 if (commandData.command ==="open-notify"){
-
-
+                    document.getElementById("panel").classList.remove("d-none");
                 }
             },   
             rootEl: document.getElementById("alan-btn"),
@@ -244,8 +264,7 @@
             function openSpecials() {
 
                 window.open("{%  url 'products' %}?category=new_arrivals,deals,clearance");
-            }
-                    
+            }       
 
         </script>
         

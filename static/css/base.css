@@ -203,12 +203,19 @@ input {
 }
 .alert {
     position:fixed; 
+    right: 0px;
     padding: 15px;
     margin-bottom: 20px;
-    width: 40%;
+    margin-top: 80px;
+    width: 35%;
     border: 1px solid transparent;
     border-radius: 4px;
     z-index: 10000;
+}
+
+.rounded{
+  height: 70px;
+  width: 70px;
 }
 /*------end popup----*/
 

@@ -55,9 +55,16 @@
 
         </div>
       <!---End Alert Message------>
+
        <!----Alert message ----->
         <div id="mItems" class="d-none"> 
          {% include 'includes/toasts/toast_menItem.html' %}
+
+        </div>
+      <!---End Alert Message------>
+      <!----Alert message ----->
+        <div id="mwItems" class="d-none"> 
+         {% include 'includes/toasts/toast_mwItem.html' %}
 
         </div>
       <!---End Alert Message------>
@@ -168,7 +175,12 @@
         <script src="assets/vendor/bootstrap-notify/bootstrap-notify.min.js"></script>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        
+
+        <script type="text/javascript">
+             $('.toast').toast('show');
+        </script>
 
         <script>
             $(document).ready(function(){
@@ -176,10 +188,6 @@
                 $("#panel").toggleClass("d-none")
               });
             });
-        </script>
-
-         <script type="text/javascript">
-             $('.toast').toast('show');
         </script>
 
         <script type="text/javascript"
@@ -281,6 +289,9 @@
                 }
                 if (commandData.command ==="open-menitem"){
                     document.getElementById("mItems").classList.remove("d-none");
+                }
+                if (commandData.command ==="open-mwitem"){
+                    document.getElementById("mwItems").classList.remove("d-none");
                 }
             },   
             rootEl: document.getElementById("alan-btn"),

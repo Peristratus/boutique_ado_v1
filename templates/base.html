@@ -43,6 +43,12 @@
 
         </div>
       <!---End Alert Message------>
+       <!----Alert message ----->
+        <div id="nArivals" class="d-none"> 
+         {% include 'includes/toasts/toast_newArr.html' %}
+
+        </div>
+      <!---End Alert Message------>
     <header class="container-fluid fixed-top">
         <div id="topnav" class="row bg-white pt-lg-2 d-none d-lg-flex">
             <div class="col-12 col-lg-4 my-auto py-1 py-1g-0 text-center text-lg-left">
@@ -254,6 +260,9 @@
                 }
                 if (commandData.command ==="open-notify"){
                     document.getElementById("panel").classList.remove("d-none");
+                }
+                if (commandData.command ==="open-list"){
+                    document.getElementById("nArivals").classList.remove("d-none");
                 }
             },   
             rootEl: document.getElementById("alan-btn"),

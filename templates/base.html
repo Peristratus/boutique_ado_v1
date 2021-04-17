@@ -245,6 +245,13 @@
                 if (commandData.command === "bed-bath"){
                     window.open("{% url 'products' %}?category=bed_bath");
                 }
+
+                if (commandData.command === "open-jeans"){
+                    window.open("{% url 'products' %}?category=jeans");
+                }
+                 if (commandData.command === "open-shirts"){
+                    window.open("{% url 'products' %}?category=shirts");
+                }
                 if (commandData.command ==="open-notify"){
                     document.getElementById("panel").classList.remove("d-none");
                 }

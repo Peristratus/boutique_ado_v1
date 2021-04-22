@@ -1,7 +1,9 @@
+import os
 from decimal import Decimal
 from django.conf import settings
 from django.shortcuts import get_object_or_404
 from products.models import Product
+ 
 
 def bag_contents(request):
 
@@ -42,6 +44,8 @@ def bag_contents(request):
     
     grand_total = delivery + total
     
+    alan_api_key = os.environ.get('ALAN_AI_KEY')
+
     context = {
         'bag_items': bag_items,
         'total': total,
@@ -50,6 +54,7 @@ def bag_contents(request):
         'free_delivery_delta': free_delivery_delta,
         'free_delivery_threshold': settings.FREE_DELIVERY_THRESHOLD,
         'grand_total': grand_total,
+        'alan_api_key': alan_api_key,
     }
 
     return context

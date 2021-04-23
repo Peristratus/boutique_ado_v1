@@ -199,9 +199,9 @@ if 'USE_AWS' in os.environ:
 
     # Static and media file
     STATICFILES_STORAGE ='storages.backends.s3boto3.S3Boto3Storage'
-    STATICFILES_LOCATION ='/static/'
+    STATICFILES_LOCATION ='static/'
     DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
-    MEDIAFILES_LOCATION = '/media/'
+    MEDIAFILES_LOCATION = 'media/'
 
     # Overide static and media URLs in Production
     STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'

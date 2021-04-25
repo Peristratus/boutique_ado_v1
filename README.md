@@ -1,45 +1,244 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
-
-Welcome Peristratus,
-
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use.
-
-## Gitpod Reminders
-
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
-
-`python3 -m http.server`
-
-A blue button should appear to click: *Make Public*,
-
-Another blue button should appear to click: *Open Browser*.
-
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
-
-A blue button should appear to click: *Make Public*,
-
-Another blue button should appear to click: *Open Browser*.
-
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
-
-## Updates Since The Instructional Video
-
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
-
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
-
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
-
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
-
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
-
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
-
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
-
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+## Medistart Hospital Web app
+![Project Image](/static/images/botique.png)
 
 --------
 
-Happy coding!
+### Table of Content
+
+-  [Description](#description)
+ - [User-stories](#user-stories)
+ - [User-Acceptance-Testing](#User-Acceptance-Testing)
+ - [Technologies](#technologies)
+ - [Deployment](#Deployment)
+ - [References](#References)
+ - [Licenses](#licenses)
+ - [Author](#author)
+
+------------------------
+ ## Description
+
+ This Final milestone project is part of my on going Full Stack Software Developer course at Canadian Business college in collaboration with the Code Instititute.
+ The website/ Web app is based on a fictional E-commerce site called Boutique Ado , the app's theme is based on an online store and their services to the general public.The user(s) will be able to 
+ interact with the web app, navigate through the site, register as a user and have a user profile page. Buy products and items as a registered or non registered user, the information will be submitted into django database. 
+ The user will also be able to interact with an Artificial Intelligent chat bot that speaks to the user(s), assist the user in navigating through the web app using voice commmands, suggest items to buy, inform the user 
+ about sale offers. The AI is able to have a meaningful conversation with the user and interact in small talk not related to the shopping experience . The site is fully functional with Stripe payment API and Webhooks 
+ incorporated with the Stripe payment system. The Web app is a fully integrated front-end and backend django web app. 
+ 
+ Disclaimer: The use of brand names and images are purely for educational purposes and will not be used for a real e-commerce web app at this dispensation .
+ 
+----------------------------
+ ## User-stories
+
+ ### Requirement Gathering
+ 
+ The table below will breifly describe the user stories for the functional and non-functional requirements, the user stories decribed in
+ **Table 1.0 Requirement Traceability Catalog** will be Independent, Negotiable, Valuable, Estimable, Smart and Testable, **INVEST** in nature and composition.
+
+ *Table 1.0 Requirement Traceability Catalog*
+
+HLR   |  HLR Ref# |    HLR Description    |                              User Stories                                                    |                                                      Acceptance criteria                                                                                        |                                MoSCoW                                                                                                                |
+------|---------- |-----------------------|----------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------| 
+Home  | H-1.0     | Gain access to Medstar website   | **As a** user **I want** to access the web page  **so that** I can gain access to the site content.| **Given** that the user is on the MedStar home page, **When** they click on the Nav links Home **then** the system will take the user to the home section of the web page. |     M   |
+Get Started btn | GS-1.1| Gain access to Medstar website | **As a** user **I want** to access home page   **so that** I can have access to the get started button.| **Given**  that the user is on MedStar home page, **When** they click on the get started button **then** the system will take the user to the user login/ register page |    M   |
+Contact us btn | CU-1.2| Gain access to Medstar website | **As a** user **I want** to access home page   **so that** I can have access to the contact us button.| **Given**  that the user is on MedStar home page, **When** they click on the contact us button **then** the system will take the user to the contact us page |    M   |
+Read more btn | RM-1.3| Gain access to Medstar website | **As a** user **I want** to access the home page   **so that** I can have access to the read more button.| **Given**  that the user is on MedStar home page, **When** they click on the read more button **then** the system will take the user to the blog page |    M   |
+Play btn | PB-1.4| Gain access to Medstar website | **As a** user **I want** to access home page   **so that** I can have access to the Play button.| **Given**  that the user is on MedStar home page, **When** they click on the play btn **then** the system will display a promotional video about MediStar |    M   |
+Contact floating btn | CF-1.5| Gain access to Medstar website | **As a** user **I want** to access home page    **so that** I can have access to the AI Chat bot.| **Given**  that the user is on MedStar home page,  **When** they click on the contact us ICON **then** the system will take the user to the AI page to speak with the AI Bot |    M   |
+Social Media icon  | SM-1.6| Gain access to Medstar website | **As a** user **I want** to access home page   **so that** I can access the social media icons of the web page.| **Given**  that the user is on MedStar home page, **When** they scroll down **then** the system will take the user to the social media icons section, if the user clicks on any of the social media icon the system will link them with the social media page for Medstar Hospital  |    M   |
+Services | S-2.0|   Gain access to Medstar website| **As a** user **I want** to access the services page  **so that** I can access the services provided by Medstar.| **Given** that the user is on MedStar  service page, **When** they click on the service nav link **then** the system will take the user to the service page, where the user can view the services provided by Medstar .|    M  |
+Services hover effect | SH-2.1|   Gain access to Medstar website| **As a** user **I want** to access the services page  **so that** I can access the services provided by Medstar.| **Given** that the user is on MedStar  service page, **When** they hover over the service nav link **then** the system will display a drop down list of services provided by Medstar.|    M  |
+Get Started btn | GS-2.2| Gain access to Medstar website | **As a** user **I want** to access service page   **so that** I can have access to the get started button.| **Given**  that the user is on MedStar service page, **When** they click on the get started button **then** the system will take the user to the user login/ register page |    M   |
+Contact floating btn | CF-2.3| Gain access to Medstar website | **As a** user **I want** to access service page    **so that** I can have access to the AI Chat bot.| **Given**  that the user is on MedStar service page,  **When** they click on the contact us ICON **then** the system will take the user to the AI page to speak with the AI Bot |    M   |
+Social Media | SM-2.4| Gain access to Medstar website | **As a** user **I want** to access service page   **so that** I can access the social media section of the service page.| **Given**  that the user is on MedStar home page, **When** they scroll down **then** the system will take the user to the social media icons, if the user clicks on any of the social media icon the system will link them with the social media page for Medstar Hospital  |    M   |
+Department | DP-3.0|   Gain access to Medstar website| **As a** user **I want** to access the department page  **so that** I can access the informatin on each department.| **Given** that the user is on MedStar  department page, **When** they click on the department nav link **then** the system will take the user to the department page, where the user can view Medstar hospital departments .|    M  |
+Contact us btn | CU-3.1| Gain access to Medstar website | **As a** user **I want** to access the department page   **so that** I can have access to the contact us button.| **Given**  that the user is on MedStar web page, **When** they click on the contact us button **then** the system will take the user to the contact us page |    M   |
+Social Media | SM-3.2| Gain access to Medstar website | **As a** user **I want** to access department page   **so that** I can access the social media section of the web page.| **Given**  that the user is on MedStar department page, **When** they scroll down **then** the system will take the user to the social media icons, if the user clicks on any of the social media icon the system will link them with the social media page for Medstar Hospital  |    M   |
+Read more btn | RM-3.3| Gain access to Medstar website | **As a** user **I want** to access the department page   **so that** I can have access to the read more button.| **Given**  that the user is on MedStar web page, **When** they click on the read more button **then** the system will take the user to the blog page |    M   |
+About Us | AU-4.0|   Gain access to Medstar website| **As a** user **I want** to access the about us  page  **so that** I can access the informatin on the about us page.| **Given** that the user is on MedStar about us page, **When** they click on the about us nav link **then** the system will take the user to the about us page, where the user can view more information about MedStar .|    M  |
+Get Started btn | GS-4.1| Gain access to Medstar website | **As a** user **I want** to access about us  page   **so that** I can have access to the get started button.| **Given**  that the user is on MedStar about us page, **When** they click on the get started button **then** the system will take the user to the user login/ register page |    M   |
+Read more btn | RB-4.2| Gain access to Medstar website | **As a** user **I want** to access the about us page   **so that** I can have access to the read more button.| **Given**  that the user is on MedStar web page, **When** they click on the read more button **then** the system will take the user to the about us page |    M   |
+Play btn | PB-4.3| Gain access to Medstar website | **As a** user **I want** to access the about use page  **so that** I can have access to the Play button.| **Given**  that the user clicks on the play btn **then** the system will display a promotional video about MediStar hospital |    M   |
+Social Media | SM-4.4 | Gain access to Medstar website | **As a** user **I want** to access about use page   **so that** I can access the social media section of the web page.| **Given**  that the user is on MedStar department page, **When** they scroll down **then** the system will take the user to the social media icons, if the user clicks on any of the social media icon the system will link them with the social media page for Medstar Hospital  |    M   |
+Blog | B-5.0|   Gain access to Medstar website| **As a** user **I want** to access the blog page  **so that** I can access the informatin on the blog page.| **Given** that the user is on the blog page, **When** they click on the blog nav link **then** the system will take the user to the blog, where the user can view blog information about MedStar .|    M  |
+Social Media | B-5.1 | Gain access to Medstar website | **As a** user **I want** to access the blog use page   **so that** I can access the social media section of the blog page.| **Given**  that the user is on MedStar department page, **When** they scroll down **then** the system will take the user to the social media icons, if the user clicks on any of the social media icon the system will link them with the social media page for Medstar Hospital  |    M   |
+Contact Us | CU-6.0|   Gain access to Medstar website| **As a** user **I want** to access the contact us  page  **so that** I can access the contact us form.| **Given** that the user is on MedStar contact us page, **When** they click on the contact us nav link **then** the system will take the user to the contact us page, where the user can access the contac form .|    M  |
+Submit btn | SU-6.1 | Gain access to Medstar website | **As a** user **I want** to access the contact us page **so that** I can access the contact form submit btn.| **Given** that the user is on Medstar website, **When** they click on the submit btn **then** the system will submit the message via emailjs to the client . |    M   |
+Reset btn | RS-6.2 | Gain access to Medstar website | **As a** user **I want** to access the contact us page **so that** I can access the Reset btn.| **Given** that the user is on Medstar contact form, **When** they click on the Reset btn **then** the system will reset the input fields. |    M   |
+Social Media | SM-6.3 | Gain access to Medstar website | **As a** user **I want** to access the contact use page   **so that** I can access the social media section of the contact us page.| **Given**  that the user is on MedStar contact us  page, **When** they scroll down **then** the system will take the user to the social media icons, if the user clicks on any of the social media icon the system will link them with the social media page for Medstar Hospital  |    M   |
+User Login | UL-7.0 | Gain access to Medstar website | **As a** user **I want** to access the Login Btn **so that** I can gain acesss to the Login portal .| **Given** that the user is on the medi web page, **When** they click on the login btn **then** the system will authenticate the users credentials and deny or give the user access to their profile page, homepage, tasks, and logout navlinks. |    M   |
+User Login Profile | LP-7.1 | Gain access to Medstar website | **As a** user **I want** to access the profile nav link **so that** I can gain acesss to the my profile page.| **Given** that the user is on the medi web page, **When** they click on the profile nav-link **then** the system will give the user access to the Task manger tool,to communicate with their doctor. |    M   |
+User Login home | Lh-7.2 | Gain access to Medstar website | **As a** user **I want** to access the home nav link **so that** I can gain acesss to the login home page.| **Given** that the user is on the medi web page, **When** they click on the home nav-link **then** the system will give the user access to the login user home page. |    M   |
+User New Task | NT-7.3 | Gain access to Medstar website | **As a** user **I want** to access the New task link **so that** I can gain acesss to New task page.| **Given** that the user is on the medi web page, **When** they click on the New Task nav-link **then** the system will give the user access to their profile page. |    M   |
+User  Edit Task | ET-7.3.1 | Gain access to Medstar website | **As a** user **I want** to access the edit task btn **so that** I can gain access to the edit task page.| **Given** that the user is on the medi web page, **When** they click on the edit btn **then** the system will take the user to the edit task page. | M |
+User Delete Task | DT-7.3.2 | Gain access to Medstar website | **As a** user **I want** to access the delete task btn **so that** I can delete a task.| **Given** that the user is on the medi web page, **When** they click on the delete task btn **then** the system will delete the task the task. | M |
+User Logout | LO-7.4 | Gain access to Medstar website | **As a** user **I want** to access the logout navlink **so that** I can logout.| **Given** that the user is on the medi web page, **When** they click on the logout nav-link**then** the system will log the user out. |    M   |
+User Register | R-8.0 | Gain access to Medstar website | **As a** user **I want** to access the Register form **so that** I can gain acesss to the register btn.| **Given** that the user is on the medi web page, **When** they click on the register btn **then** the system will validate their inputs and either decline or submit their information to mongodb. |    M   |
+Doctor Login | DL-9.0 | Gain access to Medstar website | **As a** doctor **I want** to access the Login form **so that** I can gain acesss to the Login btn.| **Given** that the user is on the medi web page, **When** they click on the login btn **then** the system will authenticate the users credentials and deny or give the user access to their home page, profile page, task manager and logout navlinks. |    M   |
+Doctor Profile | DLP-9.1 | Gain access to Medstar website | **As a** doctor **I want** to access the profile nav link **so that** I can gain acesss to the my profile page.| **Given** that the user is on the medi web page, **When** they click on the profile nav-link **then** the system will give the doctor acesss to his/her profile. |    M   |
+Doctor login home | DLH-9.2 | Gain access to Medstar website | **As a** doctor **I want** to access the home nav link **so that** I can gain acesss to the login home page.| **Given** that the doctor is on the medi web page, **When** they click on the home nav-link **then** the system will give the doctor access to the login home page to review the messages from their patients. |    M   |
+Doctor New Task | NT-9.3 | Gain access to Medstar website | **As a** doctor **I want** to access the New task link **so that** I can gain acesss to the New Task page .| **Given** that the doctor is on the medi web page, **When** they click on the New Task nav-link **then** the system will give the doctor access to the new task section to manage comunication with patient and nurse. |    M   |
+Doctor edit task | ET-9.3.1 | Gain access to Medstar website | **As a** doctor **I want** to access the edit task btn **so that** I can gain access to the edit Categories page.| **Given** that the doctor is on the medi web page, **When** they click on the edit categories btn **then** the system will take the doctor to the edit categories page. | M |
+Doctor delete task | DT-9.3.2 | Gain access to Medstar website | **As a** doctor **I want** to access the done task btn **so that** I can delete a task.| **Given** that the doctor is on the medi web page, **When** they click on the done task btn **then** the system will delete the task the from the task list. | M |
+Doctor Lab work | LW-9.4 | Gain access to Medstar website | **As a** doctor **I want** to access the lab work navlink **so that** I can fill in the lab work form.| **Given** that the doctor is on the medi web page, **When** they click on the medical test nav-link **then** the system will display a medical test form which will validate all inputs and either decline or submit the valid inputs to Mongodb. |    M   |
+Doctor prescription | PRE-9.5 | Gain access to Medstar website | **As a** doctor **I want** to access the prescription navlink **so that** I can fill in prescription forms.| **Given** that the doctor is on the medi web page, **When** they click on the prescription nav-link **then** the system will display a prescription form which will validate all inputs and either decline or submit the valid inputs to Mongodb. |    M   |
+Doctor procedure | PRO-9.6 | Gain access to Medstar website | **As a** doctor **I want** to access the procedure navlink **so that** I can fill in the procedure forms.| **Given** that the doctor is on the medi web page, **When** they click on the procedure nav-link **then** the system will display a medical procedure form which will validate all inputs and either decline or submit the valid inputs to Mongodb. | M |
+Doctor AI Diagnostic | AID-9.7 | Gain access to Medstar website | **As a** doctor **I want** to access the AI Diagnostic navlink **so that** I can gain access to the application.| **Given** that the doctor is on the medi web page, **When** they click on the AI Diagnostic nav-link **then** the system will take the doctor to the AI diagnostic tool for diabetes and Heart Disease detection . | M |
+Doctor Manage Categories | MC-9.8 | Gain access to Medstar website | **As a** doctor **I want** to access the Manage Categories navlink **so that** I can gain access to the manage Categories page.| **Given** that the doctor is on the medi web page, **When** they click on the manage categories nav-link **then** the system will take the doctor to the manage categories page. | M |
+Doctor Logout | DLO-9.9 | Gain access to Medstar website | **As a** doctor **I want** to access the logout navlink **so that** I can logout.| **Given** that the user is on the medi web page, **When** they click on the logout nav-link **then** the system will log the user out. |  M  |
+Admin login| AL-10.0 | Gain access to Medstar website | **As a** Admin **I want** to access the Admin Login link **so that** I can gain acesss to the login Form.| **Given** that the Admin is on the medi web page, **When** they click on the admin drop down link **then** the system will display an admin icon and text, when it is clicked it will take the user to the admin login  page. |    M   |
+Admin Logout | ALO-10.1  | Gain access to Medstar website | **As a** Admin **I want** to access the logout navlink **so that** I can logout.| **Given** that the Admin is on the medi web page, **When** they click on the logout nav-link **then** the system will log the admin out. |    M   |
+Medstar Register | MR-11.0 | Gain access to Medstar website | **As a** medstar employee **I want** to access the Register form **so that** I can gain acesss to Register btn.| **Given** that the employee is on the medi web page, **When** they click on the register btn **then** the system will validate their inputs and either decline or submit their information to mongodb. |    M   |
+Search btn | SR-12.0 | Gain access to Medstar website | **As a** user/ employee **I want** to access the search input field in the login home page **so that** I can gain acesss to search btn.| **Given** that the user/ employee is on the medstart web page, **When** they click on the search btn **then** the system will validate their inputs and search the task name, task description and created by fields. |    M   |
+Search Reset btn | SR-12.1 | Gain access to Medstar website | **As a** user/ employee **I want** to access the search area of the login home page **so that** I can gain acesss to Reset btn.| **Given** that the user/ employee is on the medstart web page, **When** they click on the reset btn **then** the system will reset the search fields and display the complete list of tasks. |    M   |
+
+
+
+
+## User-Acceptance-Testing
+
+The UAT will define the criteria by which the website is considered to be "working",high, medium or low defects will be identified and cataloged for further improvements or regression testing.
+The UAT critreria and results will confirm if the website can handle required task in a real-world scenarios, according to the Requirements Traceability Catalog Table 1.0.
+
+*Table 2.0 User Acceptance Testing (UAT)*
+
+
+ Test#    | User stories Ref# |        Description of task        |               Steps to evaluate    |                        Expected Result                                                                                                                                                                                                                               |            Pass / Fail / Comments                               |  
+--------  |-------------------|-----------------------------------|------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------| 
+APT-H-1.0  | H-1.0               | Home nav link                  | APT-H-1.0.0:   Click home nav link | The link should be funtional and take the user to the home page section displaying the page and information .                                                                                                                                                          |                     Pass                                      |
+APT-GS-1.1  | GS-1.1             | Get started btn                | APT-GA-1.1.0:  Click Get Started Btn| The btn should be funtional and take the user to the login/register page.                                                                                                                                                                                            |                     Pass                                      | 
+APT-CU-1.2  | CU-1.2             |Contact us btn                  | APT-CU-1.2.0:  Click Contact us Btn| The btn should be funtional and take the user to the contact us page.                                                                                                                                                                                                 |                     Pass                                      | 
+APT-RM-1.3  | RM-1.3             |Read More btn                   | APT-RM-1.3.0:  Click Read more  Btn| The btn should be funtional and take the user to the Blog section.                                                                                                                                                                                                    |                     Pass                                      | 
+APT-PB-1.4  | PB-1.4             |Play Btn                        | APT-bbt-1.4.0: Click Play Btn |The button should be functional and allow the user to a view the Medstar promotional Video.                                                                                                                                                                                |                     Pass                                      |                                                                                     
+APT-CF-1.5   | CF-1.5            |contact floating btn            | APT-PP-1.5.0: Click Contact floating btn| The button should be functional and once it is clicked, it should pop-up a phone, whatsapp and chat icon when the chat icon is clicked it should take the user to the a AI chat page                                                                            |                     Pass                                      |
+APT-AI-1.5.1  | AI-1.5            |AI Chat btn                    | APT-PP-1.5.1.1: Click chat btn| The button should be functional and once it is clicked, it should pop-up a phone, whatsapp and chat icon when the chat icon.                                                                                                                                              |                     Pass                                      |
+APT-AI-1.5.2  | AI-1.5            |AI Activate btn                    | APT-PP-1.5.1.2: Click Activate btn| The button should be functional and once it is clicked, the user should be able to speak with the AI,have a meaningful discussion between bot and Human, AI should be able to book appointments and asisst during emergencies for registed users.                 |                     Pass as functional able to make meaningful conversation , but cannot book appointments or asisst during  emergencies, phase two devlopment should introduce these features.|
+APT-SM-1.6  | SM-1.6           | social media btn                 | APT-PP-1.6.0: Click on the social media icon | The icon should be functional and once it is clicked , the user should be able to have a meaningful conversation, book appointments and asisst users during emergencies.                                                                                    |                     Pass                                      |                                                                        
+APT-S-2.0 | S-2.0               | services nav Link               | APT-S-2.0.0:  Click the service nav link | The link should be funtional and take the user to the service page section displaying the page and information.                                                                                                                                                 |                     Pass                                      |
+APT-SH-2.1  | SH-2.1            | service hover effect            | APT-SH-2.1.0: Hover over the service nav link  | When the user is on the service page and they hover over the Service nav link a drop down menu of services is displayed for the user to select.                                                                                                          |                     Pass                                      |                                                                
+APT-GS-2.2  | GS-2.2            | Get started btn                 | APT-GS-2.2.0: Click Get Started Btn| The btn should be funtional and take the user to the login/register page.                                                                                                                                                                                            |                     Pass                                      |
+APT-CF-2.3  |CF-2.3            | Contact Floating btn             | APT-CF-2.3.0: Click Contact floating btn| The button should be functional and once it is clicked, it should pop-up a phone, whatsapp and chat icon when the chat icon is clicked it should take the user to the a AI chat page                                                                             |                     Pass                                      |
+APT-SM-2.4  | SM-2.4            | Social media icon               | APT-SM-2.4.0: Click on the social media icon | The icon should be functional and once it is clicked , it should take the user to the relevant medstar socia media page                                                                                                                                    |                     Pass                                      |
+APT-DP-3.0  | DP-3.0            | Department nav link             | APT-RB-3.0.0: Click Department nav link | The link should be funtional and take the user to the department page section displaying the page and information.                                                                                                                                              |                     Pass                                      |
+APT-CU-3.1  | CU-3.1          | Contact us btn                    | APT-CU-3.1.0: Click Contact us Btn| The btn should be funtional and take the user to the contact us page.                                                                                                                                                                                                 |                     Pass                                      |
+APT-SM-3.2 | SM-3.2         | Social media icon                   | APT-SM-3.2.0: Click on the social media icon | The icon should be functional and once it is clicked , it should take the user to the relevant medstar socia media page                                                                                                                                   |                     Pass                                      |
+APT-RM-3.3 | RM-3.3         | Read more btn                       | APT-RM-3.3.0: Click Read more  Btn| The btn should be funtional and take the user to the Blog section.                                                                                                                                                                                                    |                     Pass                                      |
+APT-AU-4.0 | AU-4.0         | About us                            | APT-AU-4.0.0: Click about us nav link | The link should be funtional and take the user to the about us  page section displaying the page and information .                                                                                                                                                |                     Pass                                      |
+APT-GS-4.1  | GS-4.1        | Get started btn                     | APT-GA-4.1.0: Click Get Started Btn| The btn should be funtional and take the user to the login/register page.                                                                                                                                                                                            |                     Pass                                      | 
+APT-RM-4.2  | RM-4.2        |Read More btn                        | APT-RM-4.2.0: Click Read more  Btn| The btn should be funtional and take the user to the Blog section.                                                                                                                                                                                                    |                     Pass                                      | 
+APT-PB-4.3  | PB-4.3        |Play Btn                             | APT-PB-4.3.0: Click Play Btn |The button should be functional and allow the user to a view the Medstar promotional Video.                                                                                                                                                                                 |                     Pass                                      |   
+APT-SM-4.4  | SM-4.4         | Social media icon                  | APT-SM-4.4.0: Click on the social media icon | The icon should be functional and once it is clicked , it should take the user to the relevant medstar socia media page                                                                                                                                   |                     Pass                                      | 
+APT-BL-5.0  | BL-5.0         | Blog                               | APT-BL-5.0.0: Click Blog nav link | The link should be funtional and take the user to the blog page section displaying the page and information .                                                                                                                                                        |                     Pass                                      |
+APT-SM-5.1  | SM-5.1         | Social media icon                  | APT-SM-5.1.0: Click on the social media icon | The icon should be functional and once it is clicked , it should take the user to the relevant medstar socia media page                                                                                                                                   |                     Pass                                      | 
+APT-CU-6.0  | CU-6.0         | Contact Us                         | APT-CU-6.0.0: Click contact nav link | The link should be funtional and take the user to the contact page section displaying the page and information .                                                                                                                                                  |                     Pass                                      |
+APT-SM-6.1  | SM-6.1         | Submit Btn                         | APT-SM-6.1.0: Click submit btn  | The btn should be functional and once it is clicked , it should validate the form and then submit the contact form information to Emailjs for client review.                                                                                                                                      |                     Pass                                      | 
+APT-RS-6.2  | RS-6.2         | Reset Btn                          | APT-RS-6.2.0: Click Rest btn  | The btn should be functional and once it is clicked , it should Reset the contact form and clear all fields.                                                                                                                                                             |                     Pass                                      |                                                                                                                                   
+APT-SM-6.3  | SM-6.3        | Social media Icon                   | APT-SM-6.3.0: Click Social media icon  | The icon should be functional and once it is clicked , it should link the user with the Medstar social media page.                                                                                                                                              |                     Pass                                      | 
+APT-UL-7.0  | UL-7.0         | User login                        | APT-SM-7.0.0: Click login btn  | The btn should be functional and once it is clicked , it should validate and then decline or submit the login information to mongodb, granting access to the user.                                                                                                      |                     Pass                                      | 
+APT-ULP-7.1  |LP-7.1         | Login Profile                     | APT-LP-7.1.0: Click Profile nav Link  | The Nav link should be functional and once it is clicked , it should display the profile page .                                                                                                                                                                  |                     Pass                                      | 
+APT-LP-7.2  | Lh-7.2         | Login home                        | APT-LP-7.2.0:Click home nav link  | The nav link should be functional and once it is clicked , it should  display the task and message between user and doctor.                                                                                                                                          |                     Pass                                      | 
+APT-NT-7.3  | NT-7.3         | New Task                          | APT-NT-7.3.0:Click new task nav link  | The nav link should be functional and once it is clicked , it should display the new task page with a form to fill by the user to enable user to communicate with their doctor .                                                                                 |                     Pass                                      | 
+APT-ET-7.4  | ET-7.4         | Edit Task                         | APT-LP-7.4.0:Click edit task btn  | The btn should be functional and once it is clicked , it should allow the task  form to be edited by the user.                                                                                                                                                       |                     Pass                                      | 
+APT-DT-7.5  | DT-7.5        |  Done Task                         | APT-LP-7.5.0:Click done task btn  | The btn should be functional and once it is clicked , it should delete the done task from the task list.                                                                                                                                                             |                     Pass                                      | 
+APT-LO-7.6  | LO-7.6         | Login out                        | APT-L0-7.6.0:  Click  logout btn  | The btn should be functional and once it is clicked , it should log the user out of their account.                                                                                                                                                                    |                     Pass                                      | 
+APT-R-7.7 | R-8.0           | Register                              | APT-R-8.0.0:  Click Register btn  | The btn should be functional and once it is clicked , it should validate the input fields and then register the user.                                                                                                                                            |                     Pass                                      | 
+APT-DL-9.0  | DL-9.0         | Doctor login                        | APT-SM-9.0.0: Click login btn  | The btn should be functional and once it is clicked , it should validate and then decline or submit the login information to mongodb, granting access to the user.                                                                                                   |                     Pass                                      | 
+APT-DLP-9.1  |DLP-9.1         | Doctor Login Profile              | APT-LP-9.1.0: Click Profile nav Link  | The Nav link should be functional and once it is clicked , it should display the profile page .                                                                                                                                                                |                     Pass                                      | 
+APT-LP-9.2  | Lh-9.2         | Login home                        | APT-LP-9.2.0:Click home nav link  | The nav link should be functional and once it is clicked , it should  display the task and message between doctor and user.                                                                                                                                         |                     Pass                                      | 
+APT-NT-9.3  | NT-9.3         | New Task                          | APT-NT-9.3.0:Click new task nav link  | The nav link should be functional and once it is clicked , it should display the new task page with a form to fill by the doctor to enable doctor to communicate with his patient(user) .                                                                       |                     Pass                                      | 
+APT-ET-9.3.1  | ET-9.3.1        | Edit Task                         | APT-LP-9.3.1.0:Click edit task btn  | The btn should be functional and once it is clicked , it should allow the task  form to be edited by the doctor.                                                                                                                                               |                     Pass                                      | 
+APT-DT-9.3.2  | DT-9.3.2        |  Done Task                         | APT-LP-9.3.2.0:Click done task btn  | The btn should be functional and once it is clicked , it should delete the done task from the task list.                                                                                                                                                      |                     Pass                                      |
+APT-LW-9.4 | LW-9.4        | LabWork                              | APT-LW-9.4.0:  Click labwork navlink  | The navlink should be functional and once it is clicked , it should display the lab work form for the doctor to fill. The form should validate the inputs and then submit to the mongodb database.                                                             |                     Pass                                      | 
+APT-PR-9.5 | PR-9.5        | Prescription                          | APT-PR-9.5.0:  Click  Prescription navlink |The navlink should be functional and once it is clicked , it should display the prescription form for the doctor to fill. The form should validate the inputs and then submit to the mongodb database.                                                    |                     Pass                                      | 
+APT-PRO-9.6 | PRO-9.6        | Procedure                            | APT-PR0-9.6.0:  Click  Procedure navlink  | The navlink should be functional and once it is clicked , it should display the procedure form for the doctor to fill. The form should validate the inputs and then submit to the mongodb database                                                       |                     Pass                                      | 
+APT-AID-9.7 | AID-9.7        | AI Diagnostic                         | APT-L0-9.7.0:  Click AI Diagnostic navlink   | The navlink should be functional and once it is clicked , it should display the AI diagnostic suit for the doctor's interacrtion.                                                                                                                    |                     Pass                                      | 
+APT-AID-9.7.1 | AID 9.7       | AI Diagnostic                         | APT-L0-9.7.1.1:  Click AI Diagnostic suit/center   | The streamlit page should be functional and once the drop box is selected , it should dispaly a choice between diabetes or heart disease diagnosis, once the choice is made and the slidres are selected for their respective inputs the result for diabetes detection ratio should be between 0 negative & 1 positive while the heart disease detection is a ratio of >40 positive & <40 negative.  |                     Pass                                      | 
+APT-MC-9.8 | MC-9.8        | Manage Categories                          | APT-L0-9.8.0:  Click  manage categories navlink  | The navlink should be functional and once it is clicked , it should display the manage categories page, the doctor should be able to delete and edit categories for his patients.                                                             |                     Pass                                      |  
+APT-DLO-9.9 | DLO-9.9        | Login out                                | APT-L0-9.9.0:  Click  logout nav link  | The navlink should be functional and once it is clicked , it should log the doctor out of their account.                                                                                                                                                       |                     Pass                                      | 
+APT-AL-10.0   | AL-10.0       | Admin login                             | APT-AL-10.0.0: Click login btn  | The btn should be functional and once it is clicked , it should validate and then decline or submit the login information to mongodb, granting access to the user.                                                                                             |                     Pass                                      |                                                                     
+APT-AL0-10.1  | ALO-10.1        | Admin login-out                       | APT-ALO-10.1.0: Click login nav link  | The nav link should be functional and once it is clicked , it should logout the the user.                                                                                                                                                                |                     Pass                                      | 
+APT-MR-11.0  | MR-11.0         | Medstar Register                        | APT-MR-11.0.0: Click Register link  | The btn should be functional and once it is clicked , it should validate and then decline or submit the information to mongodb.                                                                                                                           |                     Pass                                      | 
+APT-SR-12.0  | SR-12.0        | Search Btn                               | APT-SR-12.0.0: Click search btn | The btn should be functional and once it is clicked , it should validate the user input and search the task db in mongodb for tasks_name, tasks_description and created_by and display the required searched entry or display No Result found if search field does not exit.   |                     Pass                                      | 
+APT-SR-12.1  | SR-12.1         | Reset Btn                              | APT-SR-12.1.0: Click Reset btn | The btn should be functional and once it is clicked , it should reset the search field and display the complete list of tasks.                                                                                                                                  |                     Pass                                      | 
+
+
+## Technologies 
+
+The technologies employed to develop this web application was based on the principles of Design for X (DFX) also know as Design for excellence, the basis of this methodology is based
+on cost to quality, making effective use of resources to minimize cost and relay more on innovation and technical knowledge to meet the users expectations.The software's used are mostly free 
+and meet the **Requirements Traceability Catalog Table 1.0** to develop this website, innovation and technical knowledge was based on my recently aquired skills based on my journey so 
+far with Code institute and the Canadian Business College.
+
+Technologies deployed on this project:
+
+ 1. Languages deployed on project HTML,CSS,JavaScript and python.
+ 2. Frame work utilized on project [django](https://docs.djangoproject.com/en/3.2/) and [Jinja](https://jinja.palletsprojects.com/en/2.11.x/).
+ 3. django [database](https://docs.djangoproject.com/en/3.2/ref/databases/)
+ 4. Webapp live deployment with [Heroku](https://www.heroku.com/)
+ 5. Libaries utilized on project in requirements.txt
+ 6. For coding enviroment /IDE github [GitHub](http://github.com)
+ 7. Bootstrap cnd 4.4.1 [Bootstrap](https://getbootstrap.com/)
+ 8. Bootstrap Jquery 3.3.1 [Bootstrap](https://getbootstrap.com/)
+ 9. Bootstrap cnd font awesome [Bootstrap](https://www.bootstrapcdn.com/fontawesome/)
+ 10. AI Shopping Assistance-API [Alan-AI](https://alan.app/)
+ 11. Payment Platform-API [STRIPE](https://stripe.com/en-ca)
+ 12. Pop-up Widget-API [elfsight](https://elfsight.com/popup-widget/?utm_source=websites&utm_medium=clients&utm_content=popup&utm_term=8000-azure-octopus-najpf05z.ws-us03.gitpod.io&utm_campaign=free-widget)
+ 13. Google [font](https://fonts.google.com/)
+ 14. For README.md file image and website images editing and styling Canva software [Canva](https://www.canva.com/)
+  
+
+---------------------------------------------
+
+ ## Deployment 
+
+ After my User Acceptance Testing (UAT) I pushed the final version of my code to git hub , in my commit message I cataloged each change before my final push, the steps I took 
+ can be seen below. 
+
+ 1. Complete the User UAT evaluation and made sure that all codes are funtional and operational.
+ 2. Used git commit -m to catalog all my changes in line with UAT requirement.
+ 3. Used git push to push my final version to my git hub repository. 
+ 
+
+ Before my final push on github I had already deployed my project on Herouku to check connectivity and I clicked on the automatic deploy from master to ensure that all changes on github are reflected on heroku.
+ Steps for deployment can be seen below, my project is now live on Heroku [Boutique-ado](https://boutique-ado-cbc.herokuapp.com/)
+ 
+
+ 1. Installed libaries and logged them in requitements.txt
+ 2. Create the PROCFILE
+ 3. Login to Heroku 
+ 4. Click on create new app
+ 5. Choose app name
+ 6. Choose country USA
+ 7. Click on Navlink Deploy
+ 8. Connect github Peristratus respository to Heroku
+ 9. Click on reveal config vars insert AWS access ID and keys, Database urls, Email host pass/ user, and the STRIPE secret key values, save them.
+ 10. Click on Automatic deploy master branch 
+ 11. Click on Deploy branch and wait for Heroku to build the logs and deploy the webapp.
+ 
+
+-----------------------------------------------
+
+## References
+
+I would like to make references to certain educational Youtube tutorials and certain articles that have helped with my webdesign develop my skills as a Fullstack developer.
+
+
+1. Online tutorials ALan AI [Web-DevSimplified](https://voice.alan.app/WebDevSimplified)
+2. HTML/CSS security by sqreen online article [sqreen](https://www.sqreen.com/checklists/html-css-security-checklist)
+3. Input patterns online article [HTML.com](https://html.com/attributes/input-pattern/)
+
+-----------------------------------------------
+
+## Licenses
+
+All icons,logos and videos used on my website are only for educational purposes and will not be used for the commercial version:
+
+1. Free random images from [google](https://www.google.com/) search engine.
+
+-----------------------------------------------
+
+## Author 
+
+*Name: Olaorebikan Roy Abdallah*\
+*Institute: Canadaian Business College (code Institute).*\
+*Designation: Student.*\
+*Course: Fullstack Developer.*

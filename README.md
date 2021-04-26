@@ -1,4 +1,4 @@
-## Medistart Hospital Web app
+## Boutique Ado E-Commerce Web app
 ![Project Image](/static/image/botique.png)
 
 --------
